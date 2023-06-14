@@ -1,0 +1,98 @@
+<div class="col-lg-12">	
+	<div class="row">
+		<h1 style="text-align:center;">PUNCH IN</h1>
+<div class="text-center" style="margin-top:70px;">
+    <div id="qr-reader" style="width:500px;left:30%"></div>
+    <div id="qr-reader-results"></div>          
+			
+
+			
+        </div>
+	</div>
+</div>
+
+<script>
+    function docReady(fn) {
+        // see if DOM is already available
+        if (document.readyState === "complete"
+            || document.readyState === "interactive") {
+            // call on next available tick
+            setTimeout(fn, 1);
+        } else {
+            document.addEventListener("DOMContentLoaded", fn);
+        }
+    }
+
+    docReady(function () {
+        var resultContainer = document.getElementById('qr-reader-results');
+        var lastResult, countResults = 0;
+        function onScanSuccess(decodedText, decodedResult) {
+			debugger;
+          if (decodedText !== lastResult) {
+             ++countResults;
+               lastResult = decodedText;
+                // Handle on success condition with the decoded message.
+                //console.log(`Scan result ${decodedText}`, decodedResult);
+            punchin(decodedText)
+            }
+
+        }
+		//}
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "qr-reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+    });
+
+    function punchin(decodedText){
+        debugger;
+        scandata = window.atob(decodedText);
+        debugger;
+		try{
+            if (scandata.split('~_~')[0] == 'VMSAPP' && scandata.split('~_~')[2] == 'P') {
+            //alert(scandata.split("~_~")[4]);
+                debugger;
+            var data = {
+                n_bsns_reg_id: localStorage.getItem("reg_id"), // 1,// 
+                s_acc_type: localStorage.getItem("acc_type"), // 'Business',//
+                s_bsns_email_id: localStorage.getItem("email"), // 'apponext@gmail.com',//
+                s_bsns_type: localStorage.getItem("bsns_type"), // 'CMP',//
+                s_bsns_name: localStorage.getItem("name"), // 'Apponext',//
+                s_prsnl_email_id: scandata.split("~_~")[3], // 'shweta.gaikwad@apponext.com',//
+                n_prsnl_reg_id: scandata.split("~_~")[1], // 1,//
+                s_prsnl_name: scandata.split("~_~")[4], // 'shweta Gaikwad',//
+                d_date: new Date().toISOString().split("T")[0], // '2022-04-01',//
+                punch_type: 'I', //'O',//
+                punch_time: new Date().getHours() + ":" + new Date().getMinutes() + ":" + new Date().getSeconds(), // '18:44:49',//
+                s_entry_type: 'Business'
+            };
+            $.ajax({
+                url: 'Qr/MarkAttendanceByBsns',
+                type: 'POST',
+                crossDomain: true,
+                data: data,
+                success: function (result) {
+				if(result.data[0][0]['No Data']=="No Data"){
+					alert("Already Punched In To System.")
+				}else{
+					alert("Attendance Punched In Successfully")
+				}
+                
+                },
+                error: function (err) {
+                alert("Error While Scanning QR Code")
+                },
+                complete: function (response) {
+                }
+            });
+            }
+            else{
+            alert('Please scan ')
+        }
+		}
+		catch(err){
+			alert(err)
+		}
+
+    }
+</script>
+     <script src="../assets/javascript/html5-qrcode.min.js"></script> 

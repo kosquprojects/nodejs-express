@@ -1,0 +1,3 @@
+[2021-07-09T17:16:21.621] [ERROR] app - { status: 500,
+  mess: 'ER_PARSE_ERROR',
+  mess_body: 'ER_PARSE_ERROR: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near \'\'Admin User\',s_pass =\'1234\' from tbl_emp where s_emp_id=\'123\'\' at line 1' }

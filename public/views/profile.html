@@ -1,0 +1,129 @@
+
+
+<head>
+  <title>Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<div class="container bootstrap snippet">
+    <!-- <div class="row">
+  		<div class="col-sm-10"><h1>Profile</h1></div>
+    	<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="img-circle img-responsive" src="http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100"></a></div>
+    </div> -->
+    <div class="row">
+  		<div class="col-sm-12"><!--left col-->
+              
+      <div class="col-sm-6">
+        <div class="text-center" id='imgpp'>
+          
+          <!-- <h6>Upload a different photo...</h6>
+          <input type="file" class="text-center center-block file-upload"> -->
+			
+
+			
+        </div>
+		  <div class='test-center'>
+		  			<div id="qrcode" style="position: relative;left: 155px;top: 35px;pointer-events: none"></div>
+  <script type="text/javascript">
+    let reg_id = localStorage.getItem("reg_id");
+    let acc_type = localStorage.getItem("acc_type");
+    let email = localStorage.getItem("email");
+    let name = localStorage.getItem("name");
+    let bsns_type = localStorage.getItem("bsns_type");
+    let encodeqr = btoa('VMSAPP' +'~_~'+ reg_id +'~_~'+ acc_type.charAt(0)+'~_~'+email+'~_~'+name+'~_~'+bsns_type); 
+    
+    debugger
+  new QRCode(document.getElementById("qrcode"), {
+    text: encodeqr,
+    width: 200,
+    height: 200,
+    colorDark : "#000",
+    colorLight : "#ffffff",
+    correctLevel : QRCode.CorrectLevel.L
+  });
+  </script>
+		  
+		  </div>
+
+		  
+
+
+        </div>
+        <div class="col-sm-6">              
+          <div class="tab-pane active" id="home">
+            <h1>Business Profile</h1>
+             <hr>
+             <form class="form" action="##" method="post" id="registrationForm">
+                 <div class="form-group">
+                     
+                     <div class="col-xs-12">
+                         <label for="first_name"><h4>Business Name</h4></label>
+                         <input type="text" class="form-control" name="b_name" id="b_name" placeholder="Business Name" disabled>
+                     </div>
+                 </div>
+                 <div class="form-group">
+                     
+                     <div class="col-xs-12">
+                       <label for="last_name"><h4>Email</h4></label>
+                         <input type="text" class="form-control" name="s_email_id" id="s_email_id" placeholder="Email" disabled>
+                     </div>
+                 </div>
+     
+                 <div class="form-group">
+                     
+                     <div class="col-xs-12">
+                         <label for="phone"><h4>Mobile Number</h4></label>
+                         <input type="text" class="form-control" name="s_mobile_no" id="s_mobile_no" placeholder="Mobile Number" disabled>
+                     </div>
+                 </div>
+     
+                 <div class="form-group">
+                     <div class="col-xs-12">
+                        <label for="mobile"><h4>Address</h4></label>
+                         <textarea type="text" class="form-control" name="s_bsns_address" id="s_bsns_address" placeholder="Address" disabled></textarea>
+                     </div>
+                 </div>
+             </form>
+         </div>
+
+            
+           </div><!--/tab-pane-->
+    </hr><br>
+
+               
+          <!-- <div class="panel panel-default">
+            <div class="panel-heading">Website <i class="fa fa-link fa-1x"></i></div>
+            <div class="panel-body"><a href="http://bootnipets.com">bootnipets.com</a></div>
+          </div> -->
+          
+          
+          <!-- <ul class="list-group">
+            <li class="list-group-item text-muted">Activity <i class="fa fa-dashboard fa-1x"></i></li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Shares</strong></span> 125</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Likes</strong></span> 13</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Posts</strong></span> 37</li>
+            <li class="list-group-item text-right"><span class="pull-left"><strong>Followers</strong></span> 78</li>
+          </ul>  -->
+               
+          <!-- <div class="panel panel-default">
+            <div class="panel-heading">Social Media</div>
+            <div class="panel-body">
+            	<i class="fa fa-facebook fa-2x"></i> <i class="fa fa-github fa-2x"></i> <i class="fa fa-twitter fa-2x"></i> <i class="fa fa-pinterest fa-2x"></i> <i class="fa fa-google-plus fa-2x"></i>
+            </div>
+          </div> -->
+          
+        </div><!--/col-3-->
+
+          </div><!--/tab-content-->
+
+        </div><!--/col-9-->
+    </div><!--/row-->
+
+
+
+
+                           
+    <script src="../assets/javascript/profile.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>

@@ -1,0 +1,6 @@
+[2021-08-10T14:29:30.309] [ERROR] app - { status: 500,
+  mess: 'ER_BAD_FIELD_ERROR',
+  mess_body: 'ER_BAD_FIELD_ERROR: Unknown column \'n_vendor_id\' in \'where clause\'' }
+[2021-08-10T14:44:52.694] [ERROR] app - { status: 500,
+  mess: 'ER_BAD_FIELD_ERROR',
+  mess_body: 'ER_BAD_FIELD_ERROR: Unknown column \'n_vendor_id\' in \'where clause\'' }

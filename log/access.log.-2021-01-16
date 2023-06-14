@@ -1,0 +1,2 @@
+[2021-01-16T16:26:13.889] [WARN] http - ::ffff:172.30.30.4 - - "GET /main HTTP/1.1" 302 56 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"
+[2021-01-16T16:26:13.989] [WARN] http - ::ffff:172.30.30.4 - - "GET /login HTTP/1.1" 302 46 "" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36"

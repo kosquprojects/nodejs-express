@@ -1,0 +1,6 @@
+[2021-08-02T18:09:08.538] [ERROR] app - { status: 500,
+  mess: 'ER_BAD_FIELD_ERROR',
+  mess_body: 'ER_BAD_FIELD_ERROR: Unknown column \'s_activity\' in \'where clause\'' }
+[2021-08-02T18:10:24.164] [ERROR] app - { status: 500,
+  mess: 'ER_BAD_FIELD_ERROR',
+  mess_body: 'ER_BAD_FIELD_ERROR: Unknown column \'s_activity\' in \'where clause\'' }

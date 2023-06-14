@@ -1,0 +1,190 @@
+
+<div class="col-md-12" id="userlisttbl">
+	<div class="panel">
+
+		<div class="panel-heading">
+			<span class="panel-icon"></span>
+			<span class="panel-title sizeTitle"><i class="fa fa-user"></i> Employee List</span>
+
+			<!-- <button data-toggle="modal" data-target="#user_model" type="button" class="btn btn-primary btn-sm pull-right" data-toggle="modal" data-target="#user_model"onclick="refresh();" style="margin-top: 5px;">ADD User DATA</button> -->
+			<button type="button" class="btn btn-info btn-sm btn-right " onclick="divopennclose();"
+				 title="Add New Record"><i class="fa fa-plus">
+				</i> Add New</button>
+		</div>
+		<div class="panel-body">
+
+			<table class="table table-striped table-bordered datatab" id="makerTable12">
+				<thead class="thead-light">
+					<tr>
+
+						<th>Emp Name</th>
+						<th>Emp ID</th>
+						<th>Email-Id</th>
+						<th> Designation</th>
+						<th>Company</th>
+						<th>Location</th>
+						<th>Status</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
+</div>
+
+<section id="content_form" class="table-layout">
+
+	<div class="tray tray-center" style="height: 610px;">
+
+		<!-- <div class="content-header">
+  <h2> AdminForms makes <b class="text-primary">Validation</b> is easier than ever</h2>
+  <p class="lead">Use the Admin Forms you know and love to help build the perfect form.</p>
+  </div> -->
+
+		<div class="admin-form theme-primary mw1000 center-block" style="padding-bottom: 175px;">
+			<div class="panel heading-border panel-primary">
+				<form id="form-user" method="post" onsubmit="return false;">
+					<div class="panel-body bg-light">
+						<div class="section-divider mt20 mb40">
+							<span> User Form </span>
+						</div>
+
+						<div class="section row" id="spy1">
+							<div class="col-md-6">
+								<input type="hidden" id="n_emp_auto_id" class="form-control">
+								
+								<label>Employee Name</label>
+								
+								<input type="text" class="form-control input-sm" id="s_emp_name" placeholder="Employee Name" name="s_emp_name"
+									data-validation="required">
+								
+								</div>
+
+							<div class="col-md-6">
+								<label>Employee Id</label>
+									<input type="text" name="s_emp_id" id="s_emp_id" class="form-control input-sm"
+										placeholder="Employee id" data-validation="required">
+
+
+							</div>
+						</div>
+						<div class="section row" id="spy1">
+							<div class="col-md-6">
+								<label>Designation</label>
+
+									<input type="text" name="s_designation" id="s_designation" class="form-control input-sm"
+										placeholder="Designation" data-validation="required" >
+							</div>
+
+							<div class="col-md-6">
+								<label>Email Id</label>
+									<input type="email" class="form-control input-sm" id="s_email_id" name="s_email_id"
+										placeholder="Email Id" data-validation="required,email">
+
+
+							</div>
+
+						</div>
+						<div class="section row" id="spy1">
+							<div class="col-md-6">
+								<label>Mobile Number</label>
+									<input type="text" class="form-control input-sm" id="n_mobile_no" placeholder="Mobile Number"
+										name="n_mobile_no" data-validation="required">
+
+									<!-- <input type="url" name="website" id="website" class="gui-input" placeholder="Current website url"> -->
+
+							</div>
+							<div class="col-md-6">
+								<label>Office</label>
+									<input type="text" name="s_office" id="s_office" class="form-control input-sm"
+										placeholder="Office" data-validation="required">
+							</div>
+
+						</div>
+
+						<div class="section row" id="spy1">
+							<div class="col-md-6">
+								<label>Department</label>
+									<input type="text" name="s_dept_name" id="s_dept_name" class="form-control input-sm"
+										placeholder="Office" data-validation="required">
+
+							</div>
+							<div class="col-md-6">
+								<label>Company Name</label>
+
+
+									<input type="text" class="form-control input-sm" id="s_company" placeholder="Company Name"
+										name="s_company" data-validation="required">
+
+									<!-- <input type="url" name="website" id="website" class="gui-input" placeholder="Current website url"> -->
+							</div>
+
+						</div>
+						<div class="section row" id="spy1">
+							<div class="col-md-6">
+								<label>Location</label>
+								<!-- <label for="rolename"> </label> -->
+									<input type="text" class="form-control input-sm" id="s_location" placeholder="Location"
+										name="s_location" data-validation="required">
+
+									<!-- <input type="url" name="website" id="website" class="gui-input" placeholder="Current website url"> -->
+
+							</div>
+							<div class="col-md-6">
+								<label>Password</label>
+									<input type="password" name="s_pass" id="s_pass" class="form-control input-sm"
+										placeholder="Create a password" data-validation="required">
+							</div>
+						</div>
+						<div class="section row" id="spy1">
+								<div class="col-md-6">
+										<label>Status</label>
+												<select name="n_status" id="n_status" class="form-control input-sm" data-validation="required">
+														<option value="">----Select Option----</option>
+														<option value="1">Activate</option>
+														<option value="0">Deactivate</option>
+												</select>
+									</div>
+
+					</div>
+					<div class="row">
+							<div class="col-md-6 col-sm-6 ">
+								<button type="button" class="btn active btn-info btn-sm" id="saveuser">Save</button>
+								<button type="button" class="btn active btn-info btn-sm" id="updateuser" >Update</button>
+								<button type="reset" id="resetuser" class="btn active btn-warning btn-sm"
+									onclick="back()">Back</button>
+						<!--<a class="btn btn-outline-secondary  btn-sm" onclick="back()"><b>Back</b></a>-->
+
+							</div>
+							
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</section>
+
+
+<script>
+	$.validate({
+		modules: 'html5,file'
+	});
+		$('#content_form').hide();
+
+
+	$('#s_about_me').restrictLength($('#max-length-element'));
+	$('#s_address').restrictLength($('#max-length-element'));
+	// $("#content_form").hide();
+	// function divopennclose(){
+	// 	$("#content_form").show();
+	// 	$("#userlisttbl").hide();
+	// }
+	// function divopennclose_(){
+	// 	$("#content_form").hide();
+	// 	$("#userlisttbl").show();
+	// }
+</script>
+<script src="../assets/transaction/user_master.js"></script>

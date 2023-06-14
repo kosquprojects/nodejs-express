@@ -1,0 +1,25 @@
+[2022-03-07T15:13:54.594] [ERROR] app - {
+  status: 500,
+  mess: 'ER_NO_SUCH_TABLE',
+  mess_body: "ER_NO_SUCH_TABLE: Table 'qr_attendance.tbl_emp' doesn't exist"
+}
+[2022-03-07T15:14:03.348] [ERROR] app - {
+  status: 500,
+  mess: 'ER_NO_SUCH_TABLE',
+  mess_body: "ER_NO_SUCH_TABLE: Table 'qr_attendance.tbl_emp' doesn't exist"
+}
+[2022-03-07T15:18:02.864] [ERROR] app - {
+  status: 500,
+  mess: 'ER_NO_SUCH_TABLE',
+  mess_body: "ER_NO_SUCH_TABLE: Table 'qr_attendance.tbl_emp' doesn't exist"
+}
+[2022-03-07T15:21:30.328] [ERROR] app - {
+  status: 500,
+  mess: 'ER_NO_SUCH_TABLE',
+  mess_body: "ER_NO_SUCH_TABLE: Table 'qr_attendance.tbl_emp' doesn't exist"
+}
+[2022-03-07T15:21:46.254] [ERROR] app - {
+  status: 500,
+  mess: 'ER_NO_SUCH_TABLE',
+  mess_body: "ER_NO_SUCH_TABLE: Table 'qr_attendance.tbl_emp' doesn't exist"
+}

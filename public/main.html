@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>KNOKC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel='stylesheet' type='text/css' href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">-->
+    <link rel="stylesheet" type="text/css" href="assets/css/fontgoogleapi.css">
+
+
+    <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+
+    <link rel="shortcut icon" href="assets/img/favicons/knokc.png">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.css"/>
+  <script type="text/javascript" src="https://cdn.datatables.net/r/dt/jq-2.1.4,jszip-2.5.0,pdfmake-0.1.18,dt-1.10.9,af-2.0.0,b-1.0.3,b-colvis-1.0.3,b-html5-1.0.3,b-print-1.0.3,se-1.0.1/datatables.min.js"></script> -->
+
+    <link rel="stylesheet" href="assets/css/css-loader.css">
+    <link rel="stylesheet" href="assets/css/profile.css">
+    <link rel="stylesheet" type="text/css" href="vendor/plugins/datatables/media/css/dataTables.bootstrap.css">
+
+    <link rel="stylesheet" type="text/css" href="vendor/plugins/datatables/media/css/dataTables.plugins.css">
+    <!-- validation Css -->
+    <!--<link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/theme-default.min.css">-->
+    <link rel="stylesheet" type="text/css" href="assets/css/theme-default.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="assets/fonts/iconsweets/iconsweets.css">
+    <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
+    <link rel="stylesheet" href="assets/css/fstdropdown.css">
+    <link rel="stylesheet" href="assets/css/select2.min.css">
+    <link rel="stylesheet" href="assets/css/multi.select.css">
+	
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+  <![endif]-->
+    <style>
+        .select2-container .select2-selection--single {
+            height: 34px !important;
+        }
+        
+        .select2-container--default .select2-selection--single {
+            border: 1px solid #ccc !important;
+            border-radius: 0px !important;
+        }
+        
+        .sizeTitle {
+            font-size: larger;
+        }
+        
+        .btn-right {
+            margin-top: 4px;
+            float: right;
+        }
+    </style>
+</head>
+
+<body class="dashboard-page sb-l-o sb-r-c">
+
+    <div id="loader" class="loader loader-bar" data-rounded data-text="Loading"></div>
+    <!-- <div id="skin-toolbox" id="ttolbox">
+        <div class="panel">
+            <div class="panel-heading">
+                <span class="panel-icon">
+                    <i class="fa fa-gear text-primary"></i>
+                </span>
+                <span class="panel-title"> Theme Options</span>
+            </div>
+            <div class="panel-body pn" id="ttolbbox">
+                <ul class="nav nav-list nav-list-sm pl15 pt10" role="tablist">
+                    <li class="active">
+                        <a href="#toolbox-header" role="tab" data-toggle="tab">Navbar</a>
+                    </li>
+                    <li>
+                        <a href="#toolbox-sidebar" role="tab" data-toggle="tab">Sidebar</a>
+                    </li>
+                    <li>
+                        <a href="#toolbox-settings" role="tab" data-toggle="tab">Misc</a>
+                    </li>
+                </ul>
+                <div class="tab-content p20 ptn pb15">
+                    <div role="tabpanel" class="tab-pane active" id="toolbox-header">
+                        <form id="toolbox-header-skin">
+                            <h4 class="mv20">Header Skins</h4>
+                            <div class="skin-toolbox-swatches">
+                                <div class="checkbox-custom checkbox-disabled fill mb5">
+                                    <input type="radio" name="headerSkin" id="headerSkin8" checked value="">
+                                    <label for="headerSkin8">Light</label>
+                                </div>
+                                <div class="checkbox-custom fill checkbox-primary mb5">
+                                    <input type="radio" name="headerSkin" id="headerSkin1" value="bg-primary">
+                                    <label for="headerSkin1">Primary</label>
+                                </div>
+                                <div class="checkbox-custom fill checkbox-info mb5">
+                                    <input type="radio" name="headerSkin" id="headerSkin3" value="bg-info">
+                                    <label for="headerSkin3">Info</label>
+                                </div>
+                                <div class="checkbox-custom fill checkbox-warning mb5">
+                                    <input type="radio" name="headerSkin" id="headerSkin4" value="bg-warning">
+                                    <label for="headerSkin4">Warning</label>
+                                </div>
+                                <div class="checkbox-custom fill checkbox-danger mb5">
+                                    <input type="radio" name="headerSkin" id="headerSkin5" value="bg-danger">
+                                    <label for="headerSkin5">Danger</label>
+                                </div>
+                                <div class="checkbox-custom fill checkbox-alert mb5">
+                                    <input type="radio" name="headerSkin" id="headerSkin6" value="bg-alert">
+                                    <label for="headerSkin6">Alert</label>
+                                </div>
+                                <div class="checkbox-custom fill checkbox-system mb5">
+                                    <input type="radio" name="headerSkin" id="headerSkin7" value="bg-system">
+                                    <label for="headerSkin7">System</label>
+                                </div>
+                                <div class="checkbox-custom fill checkbox-success mb5">
+                                    <input type="radio" name="headerSkin" id="headerSkin2" value="bg-success">
+                                    <label for="headerSkin2">Success</label>
+                                </div>
+                                <div class="checkbox-custom fill mb5">
+                                    <input type="radio" name="headerSkin" id="headerSkin9" value="bg-dark">
+                                    <label for="headerSkin9">Dark</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="toolbox-sidebar">
+                        <form id="toolbox-sidebar-skin">
+                            <h4 class="mv20">Sidebar Skins</h4>
+                            <div class="skin-toolbox-swatches">
+                                <div class="checkbox-custom fill mb5">
+                                    <input type="radio" name="sidebarSkin" checked id="sidebarSkin3" value="">
+                                    <label for="sidebarSkin3">Dark</label>
+                                </div>
+                                <div class="checkbox-custom fill checkbox-disabled mb5">
+                                    <input type="radio" name="sidebarSkin" id="sidebarSkin1" value="sidebar-light">
+                                    <label for="sidebarSkin1">Light</label>
+                                </div>
+                                <div class="checkbox-custom fill checkbox-light mb5">
+                                    <input type="radio" name="sidebarSkin" id="sidebarSkin2"
+                                        value="sidebar-light light">
+                                    <label for="sidebarSkin2">Lighter</label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="toolbox-settings">
+                        <form id="toolbox-settings-misc">
+                            <h4 class="mv20 mtn">Layout Options</h4>
+                            <div class="form-group">
+                                <div class="checkbox-custom fill mb5">
+                                    <input type="checkbox" checked="" id="header-option">
+                                    <label for="header-option">Fixed Header</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox-custom fill mb5">
+                                    <input type="checkbox" checked="" id="sidebar-option">
+                                    <label for="sidebar-option">Fixed Sidebar</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox-custom fill mb5">
+                                    <input type="checkbox" id="breadcrumb-option">
+                                    <label for="breadcrumb-option">Fixed Breadcrumbs</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkbox-custom fill mb5">
+                                    <input type="checkbox" id="breadcrumb-hidden">
+                                    <label for="breadcrumb-hidden">Hide Breadcrumbs</label>
+                                </div>
+                            </div>
+                            <h4 class="mv20">Layout Options</h4>
+                            <div class="form-group">
+                                <div class="radio-custom mb5">
+                                    <input type="radio" id="fullwidth-option" checked name="layout-option">
+                                    <label for="fullwidth-option">Fullwidth Layout</label>
+                                </div>
+                            </div>
+                            <div class="form-group mb20">
+                                <div class="radio-custom radio-disabled mb5">
+                                    <input type="radio" id="boxed-option" name="layout-option" disabled>
+                                    <label for="boxed-option">Boxed Layout
+                                        <b class="text-muted">(Coming Soon)</b>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="form-group mn br-t p15">
+                    <a href="#" id="clearLocalStorage" class="btn btn-primary btn-block pb10 pt10">Clear
+                        LocalStorage</a>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div id="main">
+        <header class="navbar navbar-fixed-top">
+            <div class="navbar-branding">
+                <a class="navbar-brand" href="/main">
+                    <img src="assets/img/logo2.png" style="width: 130px;">
+                </a>
+                <span id="toggle_sidemenu_l" class="ad ad-lines"></span>
+            </div>
+            <ul class="nav navbar-nav navbar-left">
+                <!-- <li>
+                    <a class="sidebar-menu-toggle" href="#">
+                        <span class="ad ad-ruby fs18"></span>
+                    </a>
+                </li>-->
+
+                <li class="hidden-xs">
+                    <a class="request-fullscreen toggle-active" href="#">
+                        <span class="ad ad-screen-full fs18"></span>
+                    </a>
+                </li>
+
+                <li>
+                    <label class="p15" style="font-size:large">Visit Management System</label>
+                </li>
+            </ul>
+            <!-- <form class="navbar-form navbar-left navbar-search" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search..." value="Search...">
+                </div>
+            </form> -->
+
+            <!-- <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <label id="profile_image_side" class="p15" style="font-size:large"></label>
+                </li>
+                <li>
+                    <a href="/logout" class=" fw600 p15" title="Logout">
+                        <i class="fa fa-sign-out" aria-hidden="true" style="font-size:xx-large"></i>
+                    </a>
+
+                </li>
+            </ul> -->
+        </header>
+
+
+
+        <aside id="sidebar_left" class="nano nano-primary affix">
+
+            <div class="sidebar-left-content nano-content">
+
+                <header class="sidebar-header">
+
+                    <div class="sidebar-widget menu-widget">
+                        <div class="row text-center mbn">
+                            <div class="col-xs-4">
+                                <a href="javascript.void(0)" class="text-primary" data-toggle="tooltip" data-placement="top" title="Dashboard">
+                                    <span class="glyphicon glyphicon-home"></span>
+                                </a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="pages_messages.html" class="text-info" data-toggle="tooltip" data-placement="top" title="Messages">
+                                    <span class="glyphicon glyphicon-inbox"></span>
+                                </a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="pages_profile.html" class="text-alert" data-toggle="tooltip" data-placement="top" title="Tasks">
+                                    <span class="glyphicon glyphicon-bell"></span>
+                                </a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="pages_timeline.html" class="text-system" data-toggle="tooltip" data-placement="top" title="Activity">
+                                    <span class="fa fa-desktop"></span>
+                                </a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="pages_profile.html" class="text-danger" data-toggle="tooltip" data-placement="top" title="Settings">
+                                    <span class="fa fa-gears"></span>
+                                </a>
+                            </div>
+                            <div class="col-xs-4">
+                                <a href="pages_gallery.html" class="text-warning" data-toggle="tooltip" data-placement="top" title="Cron Jobs">
+                                    <span class="fa fa-flask"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="sidebar-widget author-widget hidden">
+                        <div class="media">
+                            <a class="media-left" href="#">
+                                <img src="assets/img/avatars/3.jpg" class="img-responsive">
+                            </a>
+                            <div class="media-body">
+                                <div class="media-links">
+                                    <a href="#" class="sidebar-menu-toggle">User Menu -</a> <a href="pages_login(alt).html">Logout</a>
+                                </div>
+                                <div class="media-author">Michael Richards</div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <ul class="nav sidebar-menu mainmenu"></ul>
+                <!-- <div class="sidebar-toggle-mini">
+                    <a href="#">
+                        <span class="fa fa-sign-out"></span>
+                    </a>
+                </div> -->
+
+            </div>
+
+        </aside>
+
+
+        <section id="content_wrapper">
+
+            <div id="topbar-dropmenu">
+                <div class="topbar-menu row">
+                    <!-- <div class="col-xs-4 col-sm-2">
+                        <a href="#" class="metro-tile">
+                            <span class="glyphicon glyphicon-inbox"></span>
+                            <span class="metro-title">Messages</span>
+                        </a>
+                    </div> -->
+                    <div class="col-xs-4 col-sm-2">
+                        <!-- href="#/user"  -->
+                        <a href="#/user" class="metro-tile">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <span class="metro-title">Users</span>
+                        </a>
+                    </div>
+                    <!-- <div class="col-xs-4 col-sm-2">
+                        <a href="#" class="metro-tile">
+                            <span class="glyphicon glyphicon-headphones"></span>
+                            <span class="metro-title">Support</span>
+                        </a>
+                    </div> -->
+                    <div class="col-xs-4 col-sm-2">
+                        <a href="#/invoice-list" class="metro-tile">
+                            <!-- <span class="fa fa-gears"></span> -->
+                            <i class="fa fa-desktop" style="font-size: 51px;"></i>
+                            <span class="metro-title">System</span>
+                        </a>
+                    </div>
+                    <div class="col-xs-4 col-sm-2">
+                        <!--  -->
+                        <a href="#" class="metro-tile" onclick="toolboxopen();">
+                            <span class="fa fa-gears toolbox-open"></span>
+                            <span class="metro-title">Setting</span>
+                        </a>
+
+                        <!-- <p onclick="toolboxopen();">click me</p> -->
+
+                    </div>
+                    <div class="col-xs-4 col-sm-2">
+                        <a href="#/dashboard" class="metro-tile">
+                            <span class="glyphicon glyphicon-picture"></span>
+                            <span class="metro-title">Profile</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <section id="content" class="animated fadeIn">
+                <div class="row mb10" id="maincontainer"></div>
+            </section>
+        </section>
+
+
+        <aside id="sidebar_right" class="nano affix">
+            <div class="sidebar-right-content nano-content">
+                <div class="tab-block sidebar-block br-n">
+                    <ul class="nav nav-tabs tabs-border nav-justified hidden">
+                        <li class="active">
+                            <a href="#sidebar-right-tab1" data-toggle="tab">Tab 1</a>
+                        </li>
+                        <li>
+                            <a href="#sidebar-right-tab2" data-toggle="tab">Tab 2</a>
+                        </li>
+                        <li>
+                            <a href="#sidebar-right-tab3" data-toggle="tab">Tab 3</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content br-n">
+                        <div id="sidebar-right-tab1" class="tab-pane active">
+                            <h5 class="title-divider text-muted mb20"> Server Statistics
+                                <span class="pull-right"> 2013
+                                    <i class="fa fa-caret-down ml5"></i>
+                                </span>
+                            </h5>
+                            <div class="progress mh5">
+                                <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 44%">
+                                    <span class="fs11">DB Request</span>
+                                </div>
+                            </div>
+                            <div class="progress mh5">
+                                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 84%">
+                                    <span class="fs11 text-left">Server Load</span>
+                                </div>
+                            </div>
+                            <div class="progress mh5">
+                                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 61%">
+                                    <span class="fs11 text-left">Server Connections</span>
+                                </div>
+                            </div>
+                            <h5 class="title-divider text-muted mt30 mb10">Traffic Margins</h5>
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <h3 class="text-primary mn pl5">132</h3>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <h3 class="text-success-dark mn">
+                                        <i class="fa fa-caret-up"></i> 13.2% </h3>
+                                </div>
+                            </div>
+                            <h5 class="title-divider text-muted mt25 mb10">Database Request</h5>
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <h3 class="text-primary mn pl5">212</h3>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <h3 class="text-success-dark mn">
+                                        <i class="fa fa-caret-up"></i> 25.6% </h3>
+                                </div>
+                            </div>
+                            <h5 class="title-divider text-muted mt25 mb10">Server Response</h5>
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <h3 class="text-primary mn pl5">82.5</h3>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <h3 class="text-danger mn">
+                                        <i class="fa fa-caret-down"></i> 17.9% </h3>
+                                </div>
+                            </div>
+                            <h5 class="title-divider text-muted mt40 mb20"> User Activity
+                                <span class="pull-right text-primary fw600">1 Hour</span>
+                            </h5>
+                            <div class="media">
+                                <a class="media-left" href="#">
+                                    <img src="assets/img/avatars/6.jpg" class="mw40 br64" alt="holder-img">
+                                </a>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Article
+                                        <small class="text-muted">- 08/16/22</small>
+                                    </h5>Updated 36 days ago by
+                                    <a class="text-system" href="#"> Max </a>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <a class="media-left" href="#">
+                                    <img src="assets/img/avatars/4.jpg" class="mw40 br64" alt="holder-img">
+                                </a>
+                                <div class="media-body">
+                                    <h5 class="media-heading">Richard
+                                        <small class="text-muted">@cloudesigns</small>
+                                        <small class="pull-right text-muted">6h</small>
+                                    </h5>Updated 36 days ago by
+                                    <a class="text-system" href="#"> Max </a>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <a class="media-left" href="#">
+                                    <img src="assets/img/avatars/3.jpg" class="mw40 br64" alt="holder-img">
+                                </a>
+                                <div class="media-body">
+                                    <h5 class="media-heading">1,610 kcal
+                                        <span class="fa fa-caret-down text-primary pl5"></span>
+                                    </h5>Updated 36 days ago by
+                                    <a class="text-system" href="#"> Max </a>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <a class="media-left" href="#">
+                                    <img src="assets/img/avatars/2.jpg" class="mw40 br64" alt="holder-img">
+                                </a>
+                                <div class="media-body">
+                                    <h5 class="media-heading">1,610 kcal
+                                        <span class="label label-xs label-system ml5">Featured</span>
+                                    </h5>Updated 36 days ago by
+                                    <a class="text-system" href="#"> Max </a>
+                                </div>
+                            </div>
+                            <div class="media">
+                                <a class="media-left" href="#">
+                                    <img src="assets/img/avatars/5.jpg" class="mw40 br64" alt="holder-img">
+
+                                </a>
+                                <div class="media-body">
+                                    <h5 class="media-heading">1,610 kcal</h5>
+                                    Updated ago by
+                                    <a class="text-system" href="#"> Max </a>
+                                </div>
+                                <a class="media-right pl30" href="#">
+                                    <span class="fa fa-pencil text-muted mb5"></span>
+                                    <br>
+                                    <span class="fa fa-remove text-danger-light"></span>
+                                </a>
+                            </div>
+                        </div>
+                        <div id="sidebar-right-tab2" class="tab-pane"></div>
+                        <div id="sidebar-right-tab3" class="tab-pane"></div>
+                    </div>
+
+                </div>
+            </div>
+        </aside>
+
+    </div>
+    <script src="assets/Sammy/vendor/jquery.js"></script>
+    <script src="assets/Sammy/lib/sammy.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>-->
+    <script src="assets/js/Chart.js"></script>
+
+    <!-- <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script> -->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js"></script>-->
+    <script src="assets/js/Chart.bundle.min.js"></script>
+
+    <!-- <script src="https://emn178.github.io/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>-->
+    <script src="assets/js/chartjs-plugin-labels.js"></script>
+
+    <script type="text/javascript" charset="utf-8">
+        (function($) {
+            debugger;
+            var menuuu = '',
+
+                url = "/main"
+            var app = $.sammy(function() {
+                        this.get('#/dashboard', function() {
+                            $('#maincontainer').load("../views/dashboard.html");
+                        });
+                        // this.get('#/user-master', function () {
+                        //     $('#maincontainer').load("../views/createRoom.html");
+                        // });
+                        this.get('#/visitors', function() {
+                            $('#maincontainer').load("../views/user_master.html");
+                        });
+                        this.get('#/employee', function() {
+                            $('#maincontainer').load("../views/employee_master.html");
+                        });
+                        // this.get('#/plant/:ID', function () {
+                        //     $('#maincontainer').load("../views/plant.html");
+                        // });
+                        this.get('#/profile', function() {
+                            $('#maincontainer').load("../views/profile.html");
+                        })
+				        this.get('#/punchin', function() {
+                            $('#maincontainer').load("../views/punchin.html");
+                        })
+				        this.get('#/punchout', function() {
+                            $('#maincontainer').load("../views/punchout.html");
+                        })
+
+                        menuuu += `
+                            <li>
+                                <a href="#/profile" aria-expanded="false">
+                                <span id="profileimg"> <img src="" id="proimg" style="border-radius: 50%;width:36px;height:34px;"></span>
+                                <span class="sidebar-title" id="usrnm" style="padding-left:14px;"></span>
+                                </a>
+                            </li>
+                            <li class="sidebar-label pt15">Dashboard</li>
+                            <li>
+                            <a href="#/dashboard" aria-expanded="false">
+                                  <span class="fa fa-columns"></span>
+                                  <span class="sidebar-title">Dashboard</span>
+                            
+                            </a>
+                            </li>
+                            <li>
+                            <a href="#/punchin" aria-expanded="false">
+                                  <span class="fa fa-columns"></span>
+                                  <span class="sidebar-title">Punch In</span>
+                            
+                            </a>
+                            </li>
+                            <li>
+                            <a href="#/punchout" aria-expanded="false">
+                                  <span class="fa fa-columns"></span>
+                                  <span class="sidebar-title">Punch Out</span>
+                            
+                            </a>
+                            </li>
+                            <li class="sidebar-label pt15">Records</li>
+                            <li>
+                            <a href="#/visitors" aria-expanded="false">
+                                  <span class="fa fa-user"></span>
+                                  <span class="sidebar-title">Visitors</span>
+                            
+                            </a>
+                            </li>
+                            <li>
+                            <a href="#/employee" aria-expanded="false">
+                                  <span class="fa fa-user"></span>
+                                  <span class="sidebar-title">Employees</span>
+                            
+                            </a>
+                            </li>
+
+                    `;
+
+
+            });
+
+            $(function() {
+                menuuu += `<li class="sidebar-label pt15">Logout</li>
+                <li>
+                <a href="/logout"  aria-expanded="false">
+                  <span class="fa fa-power-off"></span>
+                  <span class="sidebar-title">Logout</span>
+                </a>
+              </li>
+                  `;
+                $(".mainmenu").append(menuuu);
+                $("#usrnm").text(localStorage.getItem("name"));
+                var src = '';
+                if (localStorage.getItem("iname") != '' && localStorage.getItem("iname") != "null") {
+                    src = localStorage.getItem("path")+'/'+localStorage.getItem("iname");
+                } else {
+                    src = "/assets/img/avatars/user.jpg";
+                }
+                // var html=`<img src="${src}" style="border-radius: 50%;width:36px;height:34px;">`;
+                $("#proimg").attr("src", src);
+                app.run(url);
+            });
+        })(jQuery);
+        $("#skin-toolbox").hide();
+
+        function toolboxopen() {
+            debugger;
+            // alert("l")
+
+            $("#skin-toolbox").show();
+            $("#topbar-dropmenu").hide();
+            // class="toolbox-open"
+            // $("p").last().addClass("toolbox-open");
+
+        }
+
+        function closesetting() {
+            $("#skin-toolbox").hide();
+        }
+    </script>
+    
+    <script src="vendor/jquery/jquery-1.11.1.min.js"></script>
+    <script src="vendor/jquery/jquery_ui/jquery-ui.min.js"></script>
+    <script src="assets/js/utility/utility.js"></script>
+    <script src="assets/js/demo/demo.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="vendor/plugins/pnotify/pnotify.js"></script>
+    <script src="assets/js/notification.js"></script>
+    <script src="assets/transaction/getallurl.js"></script>
+    <script src="assets/transaction/numbercomma.js"></script>
+    <script src="assets/transaction/dateformat.js"></script>
+
+    <script src="assets/js/select2.min.js"></script>
+    <script src="assets/js/multi.select.js"></script>
+
+    <script src="assets/transaction/multiselectActions.js"></script>
+    <script src="assets/javascript/formDesign.js"></script>
+    <script src="assets/javascript/csv_download.js"></script>
+    <script src="assets/javascript/fiscalyear.js"></script>
+    <!-- <script src="assets/javascript/dynamic_forms.js"></script> -->
+
+    <script src="vendor/plugins/datatables/media/js/jquery.dataTables.js"></script>
+    <script src="vendor/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
+
+
+    <script src="vendor/plugins/datatables/extensions/TableTools/js/dataTables.tableTools.min.js"></script>
+
+    <script src="vendor/plugins/datatables/extensions/ColReorder/js/dataTables.colReorder.min.js"></script>
+
+    <script src="vendor/plugins/datatables/media/js/dataTables.bootstrap.js"></script>
+    <!-- <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.3.26/jquery.form-validator.min.js"></script> -->
+    <script src="assets/js/jquery_form-validation.js"></script>
+    <script src="assets/javascript/validationErr.js"></script>
+    <script src="vendor/plugins/datatables/media/js/jquery.dataTables.js"></script>
+
+    <!-- fstdropdown.js -->
+    <script src="assets/js/fstdropdown.min.js"></script>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function() {
+
+            "use strict";
+
+            // Init Theme Core    
+            Core.init();
+
+            // Init Demo JS    
+            Demo.init();
+            debugger;
+            //$('#profile_image_side').attr('src',localStorage.getItem('img'));
+            document.getElementById('profile_image_side').textContent = localStorage.getItem('email');
+
+
+
+
+
+        });
+    </script>
+
+
+</body>
+</body>
+
+<!-- Mirrored from admindesigns.com/demos/admin/theme/dashboard.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 15 Jun 2020 06:32:45 GMT -->
+
+</html>

@@ -1,0 +1,15 @@
+[2021-08-11T14:07:52.661] [ERROR] app - { status: 500,
+  mess: 'ER_DATA_TOO_LONG',
+  mess_body: 'ER_DATA_TOO_LONG: Data too long for column \'msg\' at row 2' }
+[2021-08-11T14:08:27.383] [ERROR] app - { status: 500,
+  mess: 'ER_DATA_TOO_LONG',
+  mess_body: 'ER_DATA_TOO_LONG: Data too long for column \'msg\' at row 2' }
+[2021-08-11T14:10:13.932] [ERROR] app - { status: 500,
+  mess: 'ER_DATA_TOO_LONG',
+  mess_body: 'ER_DATA_TOO_LONG: Data too long for column \'msg\' at row 2' }
+[2021-08-11T14:11:05.255] [ERROR] app - { status: 500,
+  mess: 'ER_DATA_TOO_LONG',
+  mess_body: 'ER_DATA_TOO_LONG: Data too long for column \'msg\' at row 2' }
+[2021-08-11T14:12:19.675] [ERROR] app - { status: 500,
+  mess: 'ER_DATA_TOO_LONG',
+  mess_body: 'ER_DATA_TOO_LONG: Data too long for column \'msg\' at row 2' }
